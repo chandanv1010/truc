@@ -345,13 +345,110 @@
     }
 }
 
-// Mobile Menu Button
+// Mobile Menu Button & Mobile Right Actions
+.mobile-right-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
+}
+
+.mobile-cart-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-decoration: none;
+
+    .cart-icon-relative {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobile-cart-icon {
+        width: 26px;
+        height: 26px;
+        object-fit: contain;
+        filter: brightness(0) saturate(100%) invert(84%) sepia(59%) saturate(2250%) hue-rotate(359deg) brightness(102%) contrast(106%);
+    }
+
+    .mobile-cart-badge {
+        position: absolute;
+        top: -6px;
+        right: -8px;
+        background: #ff2a2a;
+        color: #ffffff;
+        font-size: 10px;
+        font-weight: 800;
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+}
+
 .mobile-menu-btn {
     color: #fff;
-    font-size: 24px;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
     
     &:hover {
         color: #ffc600;
+    }
+}
+
+.mobile-menu-offcanvas {
+    background: #111111 !important;
+    color: #ffffff;
+    padding: 20px;
+    z-index: 10001 !important;
+
+    .mobile-menu-close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        color: #ffffff;
+        font-size: 20px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .mobile-menu-header {
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #333;
+
+        .mobile-menu-logo img {
+            max-height: 40px;
+            object-fit: contain;
+        }
+    }
+
+    .mobile-menu-list {
+        li {
+            a {
+                color: #ffffff;
+                font-size: 15px;
+                font-weight: 600;
+                padding: 12px 0;
+                display: block;
+                border-bottom: 1px solid #222;
+
+                &:hover {
+                    color: #ffc600;
+                }
+            }
+        }
     }
 }
 

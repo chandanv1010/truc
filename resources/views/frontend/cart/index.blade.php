@@ -44,10 +44,11 @@
                             </div>
                             @include('frontend.cart.component.item')
                             @include('frontend.cart.component.voucher')
+                            @if(!is_null($buyer))
                              <div class="cart-point-box">
                                 <div class="cart-point-head">
                                     <span class="label">Điểm tích luỹ hiện có:</span>
-                                    <span class="value">{{ number_format($buyer->point) }} điểm</span>
+                                    <span class="value">{{ number_format($buyer->point ?? 0) }} điểm</span>
                                 </div>
 
                                 <div class="cart-point-body">
@@ -58,7 +59,7 @@
                                         name="point_redeem"
                                         class="input-text"
                                         min="0"
-                                        max="{{ $buyer->point }}"
+                                        max="{{ $buyer->point ?? 0 }}"
                                         value="{{ old('point_redeem', 0) }}"
                                         placeholder="Nhập số điểm muốn đổi"
                                     >
@@ -70,6 +71,7 @@
                                     </p>
                                 </div>
                             </div>
+                            @endif
                             @include('frontend.cart.component.summary')
                             @if(count($carts) && !is_null($carts) )
                                 <button type="submit" class="cart-checkout" value="create" name="create">Thanh toán đơn hàng</button>

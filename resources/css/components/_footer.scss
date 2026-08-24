@@ -9,12 +9,23 @@
         flex-wrap: wrap;
         margin-left: -5px;
         margin-right: -5px;
+        align-items: stretch;
     }
 
     .commit2-item {
         width: 25%;
         padding: 5px;
         box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .commit2-card-link {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
     }
 
     .commit2-card {
@@ -22,7 +33,9 @@
         border-radius: 8px;
         border: 2px solid #000000;
         overflow: hidden;
-        height: 275px; /* Tăng chiều cao của card để ôm sát và to đẹp như mockup */
+        height: 100%;
+        min-height: 275px;
+        flex: 1;
         background: #ffffff;
         cursor: pointer;
         box-sizing: border-box;

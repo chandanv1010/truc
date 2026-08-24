@@ -142,7 +142,12 @@
 
                         <!-- Nhóm nút bấm hành động -->
                         <div class="detail-actions">
-                            <a href="#buy-now-modal" data-uk-modal class="btn-detail-buy">MUA NGAY</a>
+                            <div class="actions-row-primary">
+                                <a href="#buy-now-modal" data-uk-modal class="btn-detail-buy">MUA NGAY</a>
+                                <button type="button" class="btn-detail-add-cart addToCart" data-id="{{ $product->id }}">
+                                    <i class="fa fa-shopping-cart"></i> THÊM GIỎ HÀNG
+                                </button>
+                            </div>
                             
                             <div class="actions-row-secondary">
                                 <a href="tel:{{ $system['contact_hotline'] ?? '0586.139.888' }}" class="btn-detail-call">
@@ -478,7 +483,7 @@
             background: #ffffff;
             overflow: hidden;
             position: relative;
-            aspect-ratio: 4/3;
+            aspect-ratio: 1 / 1;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -489,7 +494,7 @@
         .gallery-main-image img#main-detail-image {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             transition: transform 0.3s ease;
         }
         .gallery-main-image:hover img#main-detail-image {
@@ -649,25 +654,57 @@
             gap: 12px;
             margin-top: 25px;
         }
+        .actions-row-primary {
+            display: flex;
+            gap: 12px;
+        }
         .btn-detail-buy {
-            width: 100%;
+            flex: 1;
             background: #000000;
             color: #ffffff !important;
             text-transform: uppercase;
             font-weight: 950;
-            font-size: 18px;
-            padding: 15px 0;
+            font-size: 16px;
+            padding: 14px 0;
             border: 3px solid #000000;
             border-radius: 2px;
             cursor: pointer;
             transition: all 0.25s ease;
             text-align: center;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             text-decoration: none !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .btn-detail-buy:hover {
             background: #ffffff;
             color: #000000 !important;
+        }
+        .btn-detail-add-cart {
+            flex: 1;
+            font-family: inherit;
+            background: #ffc600;
+            color: #000000 !important;
+            text-transform: uppercase;
+            font-weight: 950;
+            font-size: 16px;
+            padding: 14px 0;
+            border: 3px solid #000000;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-align: center;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            outline: none;
+        }
+        .btn-detail-add-cart:hover {
+            background: #000000;
+            color: #ffffff !important;
         }
         .actions-row-secondary {
             display: flex;

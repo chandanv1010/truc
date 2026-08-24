@@ -56,7 +56,7 @@
                         </div>
                         
                         <div class="product-grid">
-                            @foreach($cat->products as $product)
+                            @foreach($cat->products->take(8) as $product)
                                 @php
                                     $pName = '';
                                     if (isset($product->languages) && $product->languages->isNotEmpty()) {
@@ -136,16 +136,22 @@
             <div class="uk-container uk-container-center">
                 <div class="commit2-grid">
                     @foreach($slides['banner-home']['item'] as $bannerHomeItem)
+                        @php
+                            $bannerUrl = !empty($bannerHomeItem['canonical']) ? write_url($bannerHomeItem['canonical']) : 'javascript:void(0);';
+                            $target = (!empty($bannerHomeItem['window']) && $bannerHomeItem['window'] == '_blank') ? '_blank' : '_self';
+                        @endphp
                         <div class="commit2-item">
-                            <div class="commit2-card">
-                                <div class="commit2-img-container">
-                                    <img src="{{ asset($bannerHomeItem['image']) }}" alt="{{ $bannerHomeItem['name'] }}" class="commit2-img">
+                            <a href="{{ $bannerUrl }}" target="{{ $target }}" class="commit2-card-link">
+                                <div class="commit2-card">
+                                    <div class="commit2-img-container">
+                                        <img src="{{ asset($bannerHomeItem['image']) }}" alt="{{ $bannerHomeItem['name'] }}" class="commit2-img">
+                                    </div>
+                                    <div class="commit2-overlay">
+                                        <h3 class="commit2-title">{{ $bannerHomeItem['name'] }}</h3>
+                                        <p class="commit2-desc">{{ $bannerHomeItem['alt'] ?? '' }}</p>
+                                    </div>
                                 </div>
-                                <div class="commit2-overlay">
-                                    <h3 class="commit2-title">{{ $bannerHomeItem['name'] }}</h3>
-                                    <p class="commit2-desc">{{ $bannerHomeItem['alt'] ?? '' }}</p>
-                                </div>
-                            </div>
+                            </a>
                         </div>
                     @endforeach
                 </div>

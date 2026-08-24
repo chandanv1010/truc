@@ -119,11 +119,7 @@ class CartController extends FrontendController
 
         $config = $this->config();
 
-        if(Agent::isMobile()){
-            $template = 'mobile.cart.index';
-        }else{
-            $template = 'frontend.cart.index';
-        }
+        $template = 'frontend.cart.index';
 
         return view($template, compact(
             'config',
@@ -176,11 +172,7 @@ class CartController extends FrontendController
 
         $config = $this->config();
 
-        if(Agent::isMobile()){
-            $template = 'mobile.cart.pay';
-        }else{
-            $template = 'frontend.cart.pay';
-        }
+        $template = 'frontend.cart.pay';
 
         return view($template, compact(
             'config',
@@ -227,12 +219,7 @@ class CartController extends FrontendController
         $system = $this->system;
         $config = $this->config();
 
-        
-        if(Agent::isMobile()){
-            $template = 'mobile.cart.success';
-        }else{
-            $template = 'frontend.cart.success';
-        }
+        $template = 'frontend.cart.success';
 
         return view($template, compact(
             'config',

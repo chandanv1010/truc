@@ -45,14 +45,11 @@ Route::group(['middleware' => ['locale']], function () {
     Route::get('crawler', [CrawlerController::class, 'crawl'])->name('crawl.index');
 
     /** CART */
-
-    Route::group(['middleware' => ['customer_auth']], function () {
-        Route::get('gio-hang' . config('apps.general.suffix'), [CartController::class, 'checkout'])->name('cart.checkout');
-        Route::get('thanh-toan' . config('apps.general.suffix'), [CartController::class, 'pay'])->name('cart.pay');
-        Route::post('cart/create', [CartController::class, 'store'])->name('cart.store');
-        Route::post('cart/createPay', [CartController::class, 'storePay'])->name('cart.storePay');
-        Route::get('cart/success' . config('apps.general.suffix'), [CartController::class, 'success'])->name('cart.success');
-    });
+    Route::get('gio-hang' . config('apps.general.suffix'), [CartController::class, 'checkout'])->name('cart.checkout');
+    Route::get('thanh-toan' . config('apps.general.suffix'), [CartController::class, 'pay'])->name('cart.pay');
+    Route::post('cart/create', [CartController::class, 'store'])->name('cart.store');
+    Route::post('cart/createPay', [CartController::class, 'storePay'])->name('cart.storePay');
+    Route::get('cart/success' . config('apps.general.suffix'), [CartController::class, 'success'])->name('cart.success');
 
 
     /* PORT PAYMENT */

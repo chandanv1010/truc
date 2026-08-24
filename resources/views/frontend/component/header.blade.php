@@ -128,10 +128,18 @@
                     </div>
                 </div>
 
-                <!-- Mobile Menu Button -->
-                <a class="mobile-menu-btn uk-hidden-large uk-margin-left-auto" href="#offcanvas" data-uk-offcanvas="{target:'#offcanvas'}">
-                    <i class="fa fa-bars"></i>
-                </a>
+                <!-- Mobile Right Actions (Cart Icon + Hamburger Menu Button) -->
+                <div class="mobile-right-actions uk-hidden-large uk-flex uk-flex-middle">
+                    <a href="{{ route('cart.checkout') }}" class="mobile-cart-link" title="Giỏ hàng">
+                        <div class="cart-icon-relative">
+                            <img src="{{ asset('vendor/frontend/img/project/icons/Group 9890.png') }}" alt="Giỏ hàng" class="mobile-cart-icon">
+                            <span class="mobile-cart-badge cart-count">{{ Cart::instance('shopping')->count() }}</span>
+                        </div>
+                    </a>
+                    <a class="mobile-menu-btn" href="#offcanvas" data-uk-offcanvas="{target:'#offcanvas'}">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
