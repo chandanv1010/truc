@@ -12,6 +12,7 @@
         @include('frontend.component.header')
         @yield('content')
         @include('frontend.component.footer')
+        @include('frontend.component.support-widget')
         @include('frontend.component.script')
         @vite('resources/js/app.js')
         {{-- {{ $system['script_2'] }} --}}

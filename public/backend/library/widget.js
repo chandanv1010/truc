@@ -66,21 +66,29 @@
 
     HT.renderSearchResult = (data) => {
         let html = ''
-        if(data.length){
+        if(data && data.length){
             for(let i = 0; i < data.length; i++){
-
+                let name = (data[i].languages && data[i].languages[0] && data[i].languages[0].pivot && data[i].languages[0].pivot.name) ? data[i].languages[0].pivot.name : (data[i].name || '');
+                let canonical = (data[i].languages && data[i].languages[0] && data[i].languages[0].pivot && data[i].languages[0].pivot.canonical) ? data[i].languages[0].pivot.canonical : (data[i].canonical || '');
+                let image = data[i].image || '';
                 let flag = ($('#model-'+data[i].id).length) ? 1 : 0;
-                let setChecked = ($('#model-'+data[i].id).length) ? HT.setChecked() : ''
+                let setChecked = ($('#model-'+data[i].id).length) ? HT.setChecked() : '';
+
+                let safeName = String(name).replace(/"/g, '&quot;');
+                let safeCanonical = String(canonical).replace(/"/g, '&quot;');
+                let safeImage = String(image).replace(/"/g, '&quot;');
 
                 html += `<button 
+                            type="button"
                             class="ajax-search-item" 
                             data-flag="${flag}" 
-                            data-canonical="${data[i].languages[0].pivot.canonical}" data-image="${data[i].image}" 
-                            data-name="${data[i].languages[0].pivot.name}" 
+                            data-canonical="${safeCanonical}" 
+                            data-image="${safeImage}" 
+                            data-name="${safeName}" 
                             data-id="${data[i].id}"
                         >
                 <div class="uk-flex uk-flex-middle uk-flex-space-between">
-                    <span>${data[i].languages[0].pivot.name}</span>
+                    <span>${name}</span>
                     <div class="auto-icon">
                         ${setChecked}
                     </div>
@@ -97,25 +105,21 @@
 
 
     HT.unfocusSearchBox = () => {
-        $(document).on('click', 'html', function(e){
-            if(!$(e.target).hasClass('search-model-result') && !$(e.target).hasClass('search-model')){
-                $('.ajax-search-result').html('')
+        $(document).on('click', function(e){
+            if(!$(e.target).closest('.search-model-box').length && !$(e.target).closest('.search-model-result').length){
+                $('.ajax-search-result').html('').hide()
             }
-        })
-
-        $(document).on('click', '.ajax-search-result', function(e){
-            e.stopPropagation();
         })
     }
 
     HT.addModel = () => {
-        $(document).on('click', '.ajax-search-item' , function(e){
+        $(document).on('click', '.search-model-box .ajax-search-item' , function(e){
             e.preventDefault()
+            e.stopPropagation()
             let _this = $(this)
             let data = _this.data()
-            let html = HT.modelTemplate(data)
             let flag = _this.attr('data-flag')
-            if(flag == 0){
+            if(flag == 0 || flag == '0'){
                 _this.find('.auto-icon').html(HT.setChecked())
                 _this.attr('data-flag', 1)
                 $('.search-model-result').append(HT.modelTemplate(data))

@@ -102,7 +102,7 @@
                         <img src="{{ asset('vendor/frontend/img/call.svg') }}" alt="" class="util-icon yellow-filter">
                         <div class="util-text">
                             <span class="util-label">BÁN HÀNG ONLINE</span>
-                            <a href="tel:+84961521688" class="util-value">+84 961 521 688</a>
+                            <a href="tel:{{ $system['contact_hotline'] }}" class="util-value">{{ $system['contact_hotline'] }}</a>
                         </div>
                     </div>
 
@@ -115,7 +115,7 @@
                                 <a href="{{ route('customer.account') }}" class="util-value">{{ Auth::guard('customer')->user()->name }}</a>
                             @else
                                 <span class="util-label">TÀI KHOẢN</span>
-                                <a href="{{ route('customer.login') }}" class="util-value">Đăng nhập/Đăng ký</a>
+                                <a href="https://gps.truc.com.vn/" target="_blank" class="util-value">Đăng nhập/Đăng ký</a>
                             @endif
                         </div>
                     </div>

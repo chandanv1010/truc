@@ -784,18 +784,23 @@ var HT = {};
     }
 
     HT.addProduct = () => {
-        $(document).on('click', '.ajax-search-item', function(e){
+        $(document).on('click', '.search-product .ajax-search-item', function(e){
             e.preventDefault()
+            e.stopPropagation()
             let _this = $(this)
             let data = _this.data()
             let flag = _this.attr('data-flag')
-            if(flag == 0){
+            if(flag == 0 || flag == '0'){
                 _this.find('.auto-icon').html(HT.setCheckedPd())
                 _this.attr('data-flag', 1)
                 $('.search-pd-result .wrapper-search').append(HT.productTemplate(data))
             }else{
                 $('#model-pd-'+data.id).remove()
                 _this.find('.auto-icon').html('')
+                _this.attr('data-flag', 0)
+            }
+        })
+    }
                 _this.attr('data-flag', 0)
             }
         })
