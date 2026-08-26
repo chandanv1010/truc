@@ -102,7 +102,7 @@
                         <img src="{{ asset('vendor/frontend/img/call.svg') }}" alt="" class="util-icon yellow-filter">
                         <div class="util-text">
                             <span class="util-label">BÁN HÀNG ONLINE</span>
-                            <a href="tel:{{ $system['contact_hotline'] }}" class="util-value">{{ $system['contact_hotline'] }}</a>
+                            <a href="tel:{{ $system['contact_phone'] }}" class="util-value">{{ $system['contact_phone'] }}</a>
                         </div>
                     </div>
 
