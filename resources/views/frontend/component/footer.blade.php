@@ -11,15 +11,15 @@
                 <ul class="footer-contact-list uk-list">
                     <li class="uk-flex uk-flex-top">
                         <i class="fa fa-map-marker contact-icon"></i>
-                        <span>{{ $system['contact_address'] ?? 'No11D LK 35 Phố Nông Quốc Chấn - Vạn Phúc - Hà Đông - Hà Nội | Hệ thống đại lý phục vụ toàn quốc.' }}</span>
+                        <span>{{ !empty($system['contact_address']) ? $system['contact_address'] : 'H1 Khu Đấu Giá Phú Lương, Phú Lương, Hà Nội, Việt Nam' }}</span>
                     </li>
                     <li class="uk-flex uk-flex-middle">
                         <i class="fa fa-phone contact-icon"></i>
-                        <span><strong>{{ $system['contact_hotline'] ?? '0987622266 | 0845622266 | 0399622266' }}</strong></span>
+                        <span><strong>{{ !empty($system['contact_hotline']) ? $system['contact_hotline'] : '0987622266 | 0845622266 | 0399622266' }}</strong></span>
                     </li>
                     <li class="uk-flex uk-flex-middle">
                         <i class="fa fa-envelope contact-icon"></i>
-                        <span>{{ $system['contact_email'] ?? 'truccomvn66@gmail.com' }}</span>
+                        <span>{{ !empty($system['contact_email']) ? $system['contact_email'] : 'truccomvn0813@gmail.com' }}</span>
                     </li>
                 </ul>
             </div>
@@ -51,16 +51,16 @@
                 <!-- Yellow Support Banner (positioned inside footer-middle-group, centered under 3 menus) -->
                 <div class="footer-yellow-banner uk-flex uk-flex-middle uk-flex-space-between">
                     <div class="banner-item">
-                        <span>Góp ý khiếu nại:</span>
-                        <strong>{{ $system['contact_complaint'] ?? '0765622266 | 0773622266' }}</strong>
+                        <span>Phản ánh khiếu nại:</span>
+                        <strong>{{ !empty($system['contact_complaint']) ? $system['contact_complaint'] : '0377622266 - 0399622266' }}</strong>
                     </div>
                     <div class="banner-item">
-                        <span>Kỹ thuật bảo hành:</span>
-                        <strong>{{ $system['contact_technical'] ?? '0343622266 | 0877622266' }}</strong>
+                        <span>Hỗ trợ kỹ thuật:</span>
+                        <strong>{{ !empty($system['contact_technical']) ? $system['contact_technical'] : '0764622266 - 0765622266' }}</strong>
                     </div>
                     <div class="banner-item">
-                        <span>Thời gian làm việc:</span>
-                        <strong>{{ $system['contact_working_hours'] ?? 'Từ 08h - 21h' }}</strong>
+                        <span>Thời gian:</span>
+                        <strong>{{ !empty($system['contact_working_hours']) ? $system['contact_working_hours'] : '7h đến 23h' }}</strong>
                     </div>
                 </div>
             </div>

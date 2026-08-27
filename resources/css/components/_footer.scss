@@ -122,8 +122,6 @@
     }
 
     .partner-card {
-        flex: 1; /* Tự động dãn rộng hết cỡ */
-        min-width: 0;
         height: 75px;
         box-sizing: border-box;
     }
@@ -551,11 +549,7 @@
             width: 50%;
         }
     }
-    .partners-section {
-        .partner-card {
-            width: calc(25% - 12px);
-        }
-    }
+
 }
 
 @media (max-width: 959px) {
@@ -618,9 +612,5 @@
             width: 50%;
         }
     }
-    .partners-section {
-        .partner-card {
-            width: calc(50% - 8px);
-        }
-    }
+
 }

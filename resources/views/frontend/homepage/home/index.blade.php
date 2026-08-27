@@ -164,15 +164,17 @@
         <section class="partners-section">
             <div class="uk-container uk-container-center">
                 <h2 class="partners-title">ĐỐI TÁC VÀ KHÁCH HÀNG TIÊU BIỂU</h2>
-                <div class="partners-carousel uk-position-relative">
-                    <div class="partners-grid uk-flex uk-flex-middle uk-flex-center">
-                        @foreach($slides['partner']['item'] as $partner)
-                            <div class="partner-card">
-                                <div class="partner-logo-wrapper uk-flex uk-flex-center uk-flex-middle">
-                                    <img src="{{ asset($partner['image']) }}" alt="{{ $partner['name'] ?? 'Partner' }}" class="partner-logo">
+                <div class="partners-carousel uk-position-relative panel-partner">
+                    <div class="swiper-container partner-swiper">
+                        <div class="swiper-wrapper">
+                            @foreach($slides['partner']['item'] as $partner)
+                                <div class="swiper-slide partner-card">
+                                    <div class="partner-logo-wrapper uk-flex uk-flex-center uk-flex-middle">
+                                        <img src="{{ asset($partner['image']) }}" alt="{{ $partner['name'] ?? 'Partner' }}" class="partner-logo">
+                                    </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>

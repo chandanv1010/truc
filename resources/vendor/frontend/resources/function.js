@@ -433,33 +433,39 @@
 
 
     HT.partner = () => {
-        var swiper = new Swiper(".panel-partner .swiper-container", {
-            loop: false,
-            pagination: {
-                el: '.swiper-pagination',
-            },
-            spaceBetween: 30,
-            slidesPerView: 2,
-            breakpoints: {
-                315: {
-                    slidesPerView: 1,
+        if ($('.partner-swiper').length || $('.panel-partner .swiper-container').length) {
+            var swiper = new Swiper(".panel-partner .swiper-container", {
+                loop: true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
                 },
-                500: {
-                    slidesPerView: 2,
+                spaceBetween: 10,
+                slidesPerView: 4,
+                breakpoints: {
+                    0: {
+                        slidesPerView: 4,
+                        spaceBetween: 8,
+                    },
+                    576: {
+                        slidesPerView: 4,
+                        spaceBetween: 10,
+                    },
+                    768: {
+                        slidesPerView: 6,
+                        spaceBetween: 12,
+                    },
+                    1024: {
+                        slidesPerView: 8,
+                        spaceBetween: 15,
+                    },
+                    1280: {
+                        slidesPerView: 10,
+                        spaceBetween: 15,
+                    }
                 },
-                768: {
-                    slidesPerView: 3,
-                },
-                1280: {
-                    slidesPerView: 6,
-                }
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            
-        });
+            });
+        }
     }
 
 

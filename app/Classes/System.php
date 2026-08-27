@@ -75,6 +75,9 @@ class System{
                         'target' => '_blank'
                     ]
                 ],
+                'complaint' => ['type' => 'text', 'label' => 'Phản ánh khiếu nại'],
+                'technical' => ['type' => 'text', 'label' => 'Hỗ trợ kỹ thuật'],
+                'working_hours' => ['type' => 'text', 'label' => 'Thời gian làm việc'],
                 'intro' => ['type' => 'textarea', 'label' => 'Giới thiệu'],
             ]
         ];
