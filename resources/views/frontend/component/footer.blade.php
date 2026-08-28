@@ -10,7 +10,7 @@
 
                 @if(!empty($system['contact_signature']))
                     <div class="footer-signature-content">
-                        {!! $system['contact_signature'] !!}
+                        {!! preg_replace('/<img[^>]*>/i', '', $system['contact_signature']) !!}
                     </div>
                 @else
                     <ul class="footer-contact-list uk-list">
