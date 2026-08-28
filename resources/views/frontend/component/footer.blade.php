@@ -2,26 +2,27 @@
     <div class="uk-container uk-container-center">
         <!-- Flex grid instead of UIkit grid to guarantee columns stay inline and centered correctly -->
         <div class="footer-main-flex">
-            <!-- Left Info Column (28%) -->
+            <!-- Left Info Column -->
             <div class="footer-info-col">
                 <div class="footer-logo">
                     <img src="{{ $system['homepage_logo'] ?? asset('userfiles/image/logo/logo.png') }}" alt="{{ $system['homepage_brand'] ?? 'TRUC GPS' }}">
                 </div>
 
-                <ul class="footer-contact-list uk-list">
-                    <li class="uk-flex uk-flex-top">
-                        <i class="fa fa-map-marker contact-icon"></i>
-                        <span>{{ !empty($system['contact_address']) ? $system['contact_address'] : 'H1 Khu Đấu Giá Phú Lương, Phú Lương, Hà Nội, Việt Nam' }}</span>
-                    </li>
-                    <li class="uk-flex uk-flex-middle">
-                        <i class="fa fa-phone contact-icon"></i>
-                        <span><strong>{{ !empty($system['contact_hotline']) ? $system['contact_hotline'] : '0987622266 | 0845622266 | 0399622266' }}</strong></span>
-                    </li>
-                    <li class="uk-flex uk-flex-middle">
-                        <i class="fa fa-envelope contact-icon"></i>
-                        <span>{{ !empty($system['contact_email']) ? $system['contact_email'] : 'truccomvn0813@gmail.com' }}</span>
-                    </li>
-                </ul>
+                @if(!empty($system['contact_signature']))
+                    <div class="footer-signature-content">
+                        {!! $system['contact_signature'] !!}
+                    </div>
+                @else
+                    <ul class="footer-contact-list uk-list">
+                        <li>🏠 <strong>CÔNG TY TNHH TRUC COM VN</strong></li>
+                        <li>🏠 H1 Khu Đấu Giá Phú Lương, Phú Lương, Hà Nội</li>
+                        <li>☎️ <strong>0854622266 | 0343622266</strong> Hotline</li>
+                        <li>☎️ <strong>0845622266 | 0987622266</strong> Đại Lý-Hãng Xe</li>
+                        <li>☎️ <strong>0765622266 | 0764622266</strong> Kĩ Thuật</li>
+                        <li>☎️ <strong>0852622266 | 0813622266</strong> Gia Hạn</li>
+                        <li>☎️ <strong>0399622266 | 0377622266</strong> Khiếu Nại Phản Ánh</li>
+                    </ul>
+                @endif
             </div>
             
             <!-- Middle Group: Contains the 3 menus and the Support Banner below them -->

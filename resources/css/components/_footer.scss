@@ -326,13 +326,16 @@
             }
         }
 
-        .footer-contact-list {
-            li {
+        .footer-contact-list, .footer-signature-content {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            li, p {
                 font-size: 13px;
                 color: #cccccc;
-                margin-bottom: 12px;
-                gap: 10px;
-                line-height: 1.4;
+                margin-bottom: 8px;
+                line-height: 1.5;
 
                 .contact-icon {
                     color: #ffc600;
