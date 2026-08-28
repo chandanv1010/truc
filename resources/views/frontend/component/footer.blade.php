@@ -31,7 +31,11 @@
                         @foreach($menu['footer-menu'] as $footerCol)
                             @php
                                 $colName = $footerCol['item']->languages->first()->pivot->name ?? '';
+                                $colCanonical = $footerCol['item']->languages->first()->pivot->canonical ?? '';
                             @endphp
+                            @if(mb_strtolower(trim($colName)) === 'dịch vụ' || mb_strtolower(trim($colName)) === 'dich vu' || strpos($colCanonical, 'dich-vu') !== false)
+                                @continue
+                            @endif
                             <div class="footer-col">
                                 <h3 class="footer-col-title">{{ $colName }}</h3>
                                 <ul class="footer-col-list uk-list">
@@ -76,12 +80,15 @@
                 </form>
                 
                 <div class="footer-socials uk-flex uk-flex-middle">
-                    <a href="{{ $system['social_facebook'] ?? '#' }}" class="social-icon"><i class="fa fa-facebook-f"></i></a>
-                    <a href="{{ $system['social_twitter'] ?? '#' }}" class="social-icon"><i class="fa fa-twitter"></i></a>
-                    <a href="{{ $system['social_instagram'] ?? '#' }}" class="social-icon"><i class="fa fa-instagram"></i></a>
-                    <a href="{{ $system['social_google'] ?? '#' }}" class="social-icon"><i class="fa fa-google"></i></a>
-                    <a href="{{ $system['social_tiktok'] ?? '#' }}" class="social-icon"><i class="fa fa-music"></i></a>
-                    <a href="{{ $system['social_youtube'] ?? '#' }}" class="social-icon"><i class="fa fa-youtube-play"></i></a>
+                    <a href="{{ $system['social_facebook'] ?? '#' }}" class="social-icon" target="_blank" title="Facebook"><i class="fa fa-facebook-f"></i></a>
+                    <a href="{{ $system['social_instagram'] ?? '#' }}" class="social-icon" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a>
+                    <a href="{{ $system['social_google'] ?? '#' }}" class="social-icon" target="_blank" title="Google"><i class="fa fa-google"></i></a>
+                    <a href="{{ $system['social_tiktok'] ?? '#' }}" class="social-icon" target="_blank" title="TikTok">
+                        <svg width="13" height="13" viewBox="0 0 448 512" fill="currentColor">
+                            <path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25V349.38A162.55 162.55 0 1 1 185 188.31V258.1a92.44 92.44 0 1 0 70.36 89.47V0h69.75a140.39 140.39 0 0 0 122.89 123.63z"/>
+                        </svg>
+                    </a>
+                    <a href="{{ $system['social_youtube'] ?? '#' }}" class="social-icon" target="_blank" title="YouTube"><i class="fa fa-youtube-play"></i></a>
                 </div>
             </div>
         </div>

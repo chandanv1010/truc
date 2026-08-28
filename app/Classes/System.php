@@ -78,6 +78,7 @@ class System{
                 'complaint' => ['type' => 'text', 'label' => 'Phản ánh khiếu nại'],
                 'technical' => ['type' => 'text', 'label' => 'Hỗ trợ kỹ thuật'],
                 'working_hours' => ['type' => 'text', 'label' => 'Thời gian làm việc'],
+                'signature' => ['type' => 'editor', 'label' => 'Chữ ký công ty (Chữ ký tin nhắn / hỗ trợ)'],
                 'intro' => ['type' => 'textarea', 'label' => 'Giới thiệu'],
             ]
         ];

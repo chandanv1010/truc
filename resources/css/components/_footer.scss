@@ -292,7 +292,7 @@
     }
 
     .footer-info-col {
-        width: 28%;
+        width: 30%;
         box-sizing: border-box;
 
         .footer-logo {
@@ -350,7 +350,7 @@
     }
 
     .footer-middle-group {
-        width: 48%;
+        width: 44%;
         display: flex;
         flex-direction: column;
         gap: 30px;
@@ -358,12 +358,14 @@
 
         .footer-menus-row {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
+            gap: 70px;
             width: 100%;
         }
 
         .footer-col {
-            width: 30%;
+            width: auto;
+            min-width: 150px;
             box-sizing: border-box;
 
             .footer-col-title {
@@ -436,7 +438,7 @@
     }
 
     .footer-newsletter-col {
-        width: 20%;
+        width: 22%;
         min-width: 240px;
         box-sizing: border-box;
 
@@ -518,6 +520,12 @@
                 &:hover {
                     background: #ffc600;
                     color: #000000;
+                }
+                svg {
+                    width: 13px;
+                    height: 13px;
+                    fill: currentColor;
+                    display: block;
                 }
             }
         }

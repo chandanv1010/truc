@@ -208,23 +208,20 @@
 
             <!-- Thông tin đơn vị cuối trang chi tiết -->
             <div class="company-footer-info">
-                @if(!empty($system['homepage_company_info']))
+                @if(!empty($system['contact_signature']))
+                    {!! $system['contact_signature'] !!}
+                @elseif(!empty($system['homepage_company_info']))
                     {!! $system['homepage_company_info'] !!}
                 @else
                     <h3>CÔNG TY TNHH TRUC COM VN</h3>
                     <ul class="uk-list info-list">
-                        <li>📁 <strong>MST:</strong> 0110916155</li>
-                        <li>🏠 <strong>Địa chỉ:</strong> Số 1 Ngõ 5 Đường Động Lãm, Phường Phú Lương, TP Hà Nội, Việt Nam</li>
-                        <li>🏠 <strong>Trụ sở chính:</strong> H1 Khu Đấu Giá Phú Lương, Phú Lương, Hà Nội</li>
-                        <li>🏠 <strong>Hệ thống đại lý phục vụ toàn quốc</strong></li>
-                        <li>☎️ 0845622266 | 0854622266 (Mua hàng)</li>
-                        <li>☎️ 0987622266 | 0522622266 (Đại Lý - Hãng)</li>
-                        <li>☎️ 0343622266 | 0846622266 (CSKH)</li>
-                        <li>☎️ 0765622266 | 0764622266 (Kỹ Thuật)</li>
-                        <li>☎️ 0852622266 | 0813622266 (Gia Hạn)</li>
-                        <li>☎️ 0399622266 | 0377622266 (Khiếu Nại)</li>
-                        <li>🌍 gps.truc.com.vn</li>
-                        <li>🌍 truccamera.vn</li>
+                        <li>🏠 <strong>CÔNG TY TNHH TRUC COM VN</strong></li>
+                        <li>🏠 H1 Khu Đấu Giá Phú Lương, Phú Lương, Hà Nội</li>
+                        <li>☎️ <strong>0854622266 | 0343622266</strong> Hotline</li>
+                        <li>☎️ <strong>0845622266 | 0987622266</strong> Đại Lý-Hãng Xe</li>
+                        <li>☎️ <strong>0765622266 | 0764622266</strong> Kĩ Thuật</li>
+                        <li>☎️ <strong>0852622266 | 0813622266</strong> Gia Hạn</li>
+                        <li>☎️ <strong>0399622266 | 0377622266</strong> Khiếu Nại Phản Ánh</li>
                     </ul>
                 @endif
             </div>
