@@ -35,6 +35,8 @@ require __DIR__ . '/web/custom.route.php';
 Route::group(['middleware' => ['locale']], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home.index');
     Route::get('lien-he.html', [FeContactController::class, 'index'])->name('contact.index');
+    Route::get('/sitemap.xml', [App\Http\Controllers\Frontend\SitemapController::class, 'index'])->name('sitemap.xml');
+    Route::get('/sitemap', [App\Http\Controllers\Frontend\SitemapController::class, 'index'])->name('sitemap.index');
     Route::get('/thumb', [App\Http\Controllers\ImageResizerController::class, 'resize'])->name('thumb');
 
     Route::get('tim-kiem', [FeProductCatalogueController::class, 'search'])->name('product.catalogue.search');
