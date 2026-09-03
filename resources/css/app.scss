@@ -17,6 +17,7 @@
 @use "components/header";
 @use "components/hero";
 @use "components/product_grid";
+@use "components/tel-autolink";
 
 @import "../vendor/backend/css/plugins/toastr/toastr.min.css";
 @import "../vendor/frontend/resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css";

@@ -2,6 +2,11 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,user-scalable=0">
 <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+<!-- Chặn iOS Safari / Android tự động bọc số điện thoại thành link tel: và áp màu
+     mặc định của trình duyệt, khiến chữ bị lẫn vào nền tối. -->
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="date=no">
+<meta name="format-detection" content="address=no">
 <meta name="robots" content="index,follow"/>
 <meta name="author" content="{{ $system['homepage_company'] }}"/>
 <meta name="copyright" content="{{ $system['homepage_company'] }}" />

@@ -35,7 +35,8 @@ class System{
                 'viettelpost_password' => ['type' => 'text', 'label' => 'Password Viettel Post'],
                 'download_text' => ['type' => 'text', 'label' => 'Chữ nút Tải tài liệu'],
                 'download_link' => ['type' => 'text', 'label' => 'Link nút Tải tài liệu'],
-                'shared_offer' => ['type' => 'editor', 'label' => 'Ưu đãi chung sản phẩm'],
+                'shared_offer_title' => ['type' => 'text', 'label' => 'Tiêu đề khối ưu đãi (chi tiết sản phẩm)', 'title' => 'Ví dụ: ƯU ĐÃI TỪ TRUC GPS'],
+                'shared_offer' => ['type' => 'editor', 'label' => 'Ưu đãi chung sản phẩm', 'title' => 'Nội dung ưu đãi mặc định hiển thị dưới giá ở trang chi tiết sản phẩm. Sản phẩm nào có "Nội dung khuyến mãi" riêng sẽ ưu tiên dùng nội dung riêng.'],
                 'company_info' => ['type' => 'editor', 'label' => 'Thông tin đơn vị dưới chi tiết sản phẩm'],
             ]
         ];

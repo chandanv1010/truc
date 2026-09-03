@@ -119,23 +119,23 @@
                         </div>
 
                         <!-- Khối ưu đãi -->
-                        @if($product->no_offer != 1)
+                        @php
+                            // Ưu tiên nội dung khuyến mãi riêng của sản phẩm, nếu không có thì dùng
+                            // ưu đãi chung khai báo tại Cấu hình hệ thống > Thông tin chung.
+                            $offerContent = !empty($product->promotion_content)
+                                ? $product->promotion_content
+                                : ($system['homepage_shared_offer'] ?? '');
+                            $offerTitle = $system['homepage_shared_offer_title'] ?? '';
+                        @endphp
+                        @if($product->no_offer != 1 && trim(strip_tags($offerContent, '<img>')) !== '')
                             <div class="offers-box">
-                                <div class="offers-header">
-                                    <span>ƯU ĐÃI TỪ TRUC GPS</span>
-                                </div>
+                                @if($offerTitle !== '')
+                                    <div class="offers-header">
+                                        <span>{{ $offerTitle }}</span>
+                                    </div>
+                                @endif
                                 <div class="offers-content">
-                                    @if(!empty($product->promotion_content))
-                                        {!! $product->promotion_content !!}
-                                    @elseif(!empty($system['homepage_shared_offer']))
-                                        {!! $system['homepage_shared_offer'] !!}
-                                    @else
-                                        <ul>
-                                            <li>Tặng 03 tháng dịch vụ cho gói 1 năm</li>
-                                            <li>Giảm thêm 100.000đ khi không lắp Relay</li>
-                                            <li>Miễn phí lắp đặt nội thành Hà Nội, Đà Nẵng & TPHCM</li>
-                                        </ul>
-                                    @endif
+                                    {!! $offerContent !!}
                                 </div>
                             </div>
                         @endif
